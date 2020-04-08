@@ -62,14 +62,12 @@ console.log("Exercitiul 3: ")
                     for(let i = 0; i < this.laturi.length; i++){
                         perimetru += this.laturi[i];
                     }
-                    console.log("Perimetru este egal cu: " + perimetru);        
+                    return perimetru;        
                 }
 
                 calcSemiperimetru(){
-                    let perimetru = 0;
-                    for(let i = 0; i < this.laturi.length; i++){
-                        perimetru += this.laturi[i];
-                    }
+                    console.log("Forma este de culoare: " + this.culoare);
+                    console.log("Perimetrul este egal cu :" + (this.calcPerimetru));
                     console.log("Semiperimetru este egal cu: " + (perimetru/2)); 
                 }
 
@@ -105,8 +103,8 @@ console.log("Exercitiul 3: ")
                 calcAria(){
                     switch(this.laturi.length){
                         case 3:
-                            var sp = (this.laturi[0] + this.laturi[1] + this.laturi[2]);
-                            var aria = Math.sqrt(sp*(sp-this.laturi[0])*(sp-this.laturi[1])*(sp-this.laturi[2]));
+                            var per = (this.laturi[0] + this.laturi[1] + this.laturi[2]);
+                            var aria = Math.sqrt(per*(per-this.laturi[0])*(per-this.laturi[1])*(per-this.laturi[2]));
                             console.log("Aria triunghiului este egala cu:  " + aria);
                             break;
                         case 4:
@@ -132,8 +130,8 @@ console.log("Exercitiul 3: ")
                 calcAria(){
                     switch(this.laturi.length){
                         case 3:
-                            var sp = (this.laturi[0] + this.laturi[1] + this.laturi[2]);
-                            var aria = Math.sqrt(sp*(sp-this.laturi[0])*(sp-this.laturi[1])*(sp-this.laturi[2]));
+                            var per = (this.laturi[0] + this.laturi[1] + this.laturi[2]);
+                            var aria = Math.sqrt(per*(per-this.laturi[0])*(per-this.laturi[1])*(per-this.laturi[2]));
                             console.log("Aria triunghiului este egala cu : " + aria);
                             break;
                         case 4:
