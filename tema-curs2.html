@@ -33,208 +33,149 @@ console.log("Tipul parametrului este : " + typeof r);
 parametertype("Ion");
 
 
-console.log("Exercitiul 3: ");
-const fraze = ["Quisque faucibus ipsum id nibh egestas bibendum.",
-        "Phasellus tincidunt sapien nec est tempus lacinia.",
-        "Curabitur ac elit at turpis ultrices hendrerit at et tellus.",
-        "Praesent a magna a ligula gravida sodales eu ut erat.",
-        "Ut eleifend velit vitae ipsum mattis viverra."]
+console.log("Exercitiul 3")
+            const fraze = ["Quisque faucibus ipsum id nibh egestas bibendum.",
+                        "Phasellus tincidunt sapien nec est tempus lacinia.",
+                        "Curabitur ac elit at turpis ultrices hendrerit at et tellus.",
+                        "Praesent a magna a ligula gravida sodales eu ut erat.",
+                        "Ut eleifend velit vitae ipsum mattis viverra."]
+            function functie(string){
+                var result = "";
+                var split = fraze.toString().split(/(?:,| )+/);   
+                 for(let i = 0; i < split.length; i++){
+                    let ex = split[i].charAt(0);
+                    result += ex; 
+                } 
+                 console.log(result);
+            }
+            functie(fraze);
 
-function functie(string){
-        var result = "";
-        var split = fraze.toString().split(/(?:,| )+/);
-                for (let i = 0; i < split.lenght; i++){
-                     let ex = split[i].charAt(0);
-                     result += ex;
-        }
-        console.log(result);
-}
-functie(fraze);
-
-
-
-console.log("Exercitiul 4: ");
-class Shapes {
-        constructor(culoare, l1, l2, l3, l4, l5, l6, l7){
-                this.culoare = culoare;
-                this.l1 = l1;
-                this.l2 = l2;
-                this.l3 = l3;
-                this.l4 = l4;
-                this.l5 = l5;
-                this.l6 = l6;
-                this.l7 = l7;
-        }
-
-        tipPoligon(){
-                var array = [this.l1, this.l2, this.l3, this.l4, this.l5, this.l6, this.l7];
-                let counter = 0;
-                for(var i = 0; i <= array.lenght; i++){
-                        if(array[i] > 0 || array[i] < 0){
-                                counter++;
-                        }
+            console.log("Exercitiul 4")
+            class Shapes {
+                constructor(culoare, laturi){
+                    this.culoare = culoare;
+                    this.laturi = laturi;
+                }
+                calcPerimetru(){
+                    console.log("Culoarea formei este: " + this.culoare);
+                    let perimeter = 0;
+                    for(let i = 0; i < this.laturi.length; i++){
+                        perimeter += this.laturi[i];
+                    }
+                    console.log("Perimetru = " + perimeter);        
                 }
 
-
-        }
-        switch(counter){
-                case 3:
-                        return "Tipul poligonului este: TRIUNGHI";
-                        break;
-                case 4:
-                        return "Tipul poligonului este: PATRULATER";
-                        break;
-                case 5: 
-                        return "Tipul poligonului este: PENTAGON";
-                        break;
-                case 6: 
-                        return "Tipul poligonului este: HEXAGON";
-                        break;
-                case 7:         
-                        return "WORK IN PROGRESS";
-                        break;
-                default:
-                        return "WORK IN PROGRESS";
-        }
-
-}
-
-        calcPerimetru(x){
-        console.log("Culoarea formei create este : " + this.culoare);
-        switch(x){
-                case "Tipul poligonului este: TRIUNGHI":
-                        perimetru = (this.l1 + this.l2 + this.l3);
-                        console.log("Perimetrul triunghiului = " + perimetru);
-                        break;
-                
-                case "Tipul poligonului este: PATRULATER":
-                        perimetru = (this.l1 + this.l2 + this.l3 + this.l4);
-                        console.log("Perimetrul patrulaterului = " + perimetru);
-                        break;
-
-                case "Tipul poligonului este: PENTAGON": 
-                        perimetru = (this.l1 + this.l2 + this.l3 + this.l4 + this.l5);
-                        console.log("Perimetrul pentagonului = " + perimetru);
-                        break;
-                
-                case "Tipul poligonului este: HEXAGON":
-                        perimetru = (this.l1 + this.l2 + this.l3 + this.l4 + this.l5 + this.l6);
-                        console.log("Perimetrul hexagonului = " + perimetru);
-                        break;
-                
-        }
-}
-        calc Semiperimetru(y){
-                switch(y){
-                        case "Tipul poligonului este: TRIUNGHI":
-                        var Semiperimetru = (this.l1 + this.l2 + this.l3) /2;
-                        console.log("Semiperimetrul triunghiului = " + semiPerimetru);
-                        break;
-
-                        case "Tipul poligonului este: PATRULATER":
-                        var Semiperimetru = (this.l1 + this.l2 + this.l3 + this.l4) /2;
-                        console.log("Semiperimetrul patrulaterului = " +semiPerimetru);
-                        break;
-
-                        case "Tipul poligonului este: PENTAGON":
-                        var Semiperimetru = (this.l1 + this.l2 + this.l3 + this.l4 + this.l5) /2;
-                        console.log("Semiperimetrul pentagonului = " +semiPerimetru);
-                        break;
-
-                        case "Tipul poligonului este: HEXAGON":
-                        var Semiperimetru = (this.l1 + this.l2 + this.l3 + this.l4 + this.l5 + this.l6 ) /2;
-                        console.log("Semiperimetrul hexagonului = " +semiPerimetru);
-                        break;
-                }
-        }
-
-const patrat = new Shapes("rosu", 3, 1, 2, 3, 5, 6, 1);
-console.log(patrat.tipPoligon());
-patrat.calcPerimetru(patrat.tipPoligon());
-patrat.calcSemiperimetru(patrat.tipPoligon());
-
-
-
-        console.log("Exercitiul 5");
-
-        class extindeShapes1 extends Shapes{
-                constructor(culoare, l1, l2, l3, l4, l5, l6, l7){
-                        super(culoare, l1,l2,l3,l4,l5,l6,l7);
+                calcSemiperimetru(){
+                    let semiPerimetru = 0;
+                    for(let i = 0; i < this.laturi.length; i++){
+                        semiPerimetru += this.laturi[i];
+                    }
+                    console.log("Semiperimetru = " + (semiPerimetru/2)); 
                 }
 
-        calcAria(x){
-                switch(x){
-                        case "Tipul poligonului este: TRIUNGHI":
-                        var sp = ((this.l1 + this.l2 + this.l3) /2);
-                        var aria = Math.sqrt(sp*(sp-this.l1)* (sp-this.l2)*(sp-this.l3));
-                        console.log("Aria triunghiului = " + aria);
-                        break;
-                        
-                        case "Tipul poligonului este: PATRULATER":
-                        aria = this.l1 * this.l2;
-                        console.log("Aria patrulaterului = " + aria);
-                        break;
-
-                        case "Tipul poligonului este: PENTAGON":
-                        aria = 1.720477400588951 * (this.l1 ** 2);
-                        console.log("Aria pentagonului = " + aria);
-                        break;
-
-                        case "Tipul poligonului este: HEXAGON":
-                        aria = 2.598076211353316 * (this.l1** 2);
-                        console.log("Aria hexagonului = " + aria);
-                        break;
+                tipPoligon(){
+                    let counter = 0;
+                    for(let i = 0; i < this.laturi.length; i++){
+                        counter++
+                    }
+                    switch(counter){
+                            case 3:
+                                console.log("Tip poligon: Triunghi");
+                                break;
+                            case 4:
+                                console.log("Tip poligon: Patrulater");
+                                break;
+                            case 5:
+                                console.log("Tip poligon: Pentagon");
+                                break;
+                            case 6:
+                                console.log("Tip poligon: Hexagon");
+                                break;
+                            default:
+                            console.log("WORK IN PROGRESS");       
+                    }
+                } 
+            }
+            var patrat = new Shapes("albastru",[1,2,3,4,5,6]);
+            patrat.calcPerimetru();
+            patrat.calcSemiperimetru();
+            patrat.tipPoligon();
+            
+            console.log("Exercitiul 5")
+            class extindeShapes1 extends Shapes{
+                constructor(culoare, laturi){
+                    super(culoare, laturi);
                 }
-        }
-
-
-        class extendeShapes2 extends Shapes{
-                constructor(culoare, l1, l2, l3, l4, l5, l6, l7){
-                        super(culoare, l1, l2, l3, l4, l5, l6, l7 )
+                calcAria(){
+                    let counter = 0;
+                    for(let i = 0; i < this.laturi.length; i++){
+                        let lat = i;
+                        counter++;
+                    }
+                    switch(counter){
+                        case 3:
+                            var sp = (this.laturi[0] + this.laturi[1] + this.laturi[2]);
+                            var aria = Math.sqrt(sp*(sp-this.l1)*(sp-this.l2)*(sp-this.l3));
+                            console.log("Aria triunghiului = " + aria);
+                            break;
+                        case 4:
+                            aria = this.laturi[0] * this.laturi[1];
+                            console.log("Aria patrulaterului = " + aria);
+                            break; 
+                        case 5:
+                            aria = 1.720477400588951 * (this.laturi[0] ** 2);
+                            console.log("Aria pentagonului = " + aria);
+                            break; 
+                        case 6:
+                            aria = 2.598076211353316 * (this.laturi[0] ** 2);
+                            console.log("Aria hexagonului = " + aria);
+                            break;          
+                    }   
                 }
+            }
 
-                calcAria(x){
-                switch(x){
-                        case "Tipul poligonului este: TRIUNGHI":
-                        var sp = ((this.l1 + this.l2 + this.l3) /2);
-                        var aria = Math.sqrt(sp*(sp-this.l1)* (sp-this.l2)*(sp-this.l3));
-                        console.log("Aria triunghiului = " + aria);
-                        break;
-                        
-                        case "Tipul poligonului este: PATRULATER":
-                        aria = this.l1 * this.l2;
-                        console.log("Aria patrulaterului = " + aria);
-                        break;
+            class extindeShapes2 extends Shapes{
+                constructor(culoare, laturi){
+                    super(culoare, laturi);
+                }
+                calcAria(){
+                    let counter = 0;
+                    for(let i = 0; i < this.laturi.length; i++){
+                        let lat = i;
+                        counter++;
+                    }
+                    switch(counter){
+                        case 3:
+                            var sp = (this.laturi[0] + this.laturi[1] + this.laturi[2]);
+                            var aria = Math.sqrt(sp*(sp-this.laturi[0])*(sp-this.laturi[1])*(sp-this.laturi[2]));
+                            console.log("Aria triunghiului = " + aria);
+                            break;
+                        case 4:
+                            aria = this.laturi[0] * this.laturi[1];
+                            console.log("Aria patrulaterului = " + aria);
+                            break; 
+                        case 5:
+                            aria = 1.720477400588951 * (this.laturi[0] ** 2);
+                            console.log("Aria pentagonului = " + aria);
+                            break; 
+                        case 6:
+                            aria = 2.598076211353316 * (this.laturi[0] ** 2);
+                            console.log("Aria hexagonului = " + aria);
+                            break;          
+                    }   
+                }
+            }
+            var forma1 = new extindeShapes1("rosu",[4,7,5,5]);
+            forma1.calcPerimetru();
+            forma1.calcSemiperimetru();
+            forma1.tipPoligon();
+            forma1.calcAria();
 
-                        case "Tipul poligonului este: PENTAGON":
-                        aria = 1.720477400588951 * (this.l1 ** 2);
-                        console.log("Aria pentagonului = " + aria);
-                        break;
-
-                        case "Tipul poligonului este: HEXAGON":
-                        aria = 2.598076211353316 * (this.l1** 2);
-                        console.log("Aria hexagonului = " + aria);
-                        break;
-        }
-
-
-
-        const forma1 = new extindeShapes1("rosu", 10,11,12,2,3);
-        console.log(forma1.tipPoligon());
-        forma1.calcAria(forma1.tipPoligon());
-        forma1.calcPerimetru(forma1.tipPoligon());
-        forma1.calcSemiperimetru(forma1.tipPoligon());
-
-
-        const forma2 = new extindeShapes2("verde", 3,1,2,3,5,6);
-        console.log(forma2.tipPoligon());
-        forma2.calcAria(forma2.tipPoligon());
-        forma2.calcPerimetru(forma2.tipPoligon());
-        forma2.calcSemiperimetru(forma2.tipPoligon());
-
-
-
-
+            var forma2 = new extindeShapes2("verde",[5,3,4]);
+            forma2.calcPerimetru();
+            forma2.calcSemiperimetru();
+            forma2.tipPoligon();
+            forma2.calcAria();
 </script>
 
 
